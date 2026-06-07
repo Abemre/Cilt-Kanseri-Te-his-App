@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
 import 'package:image/image.dart' as img;
 
@@ -9,9 +10,9 @@ class AiService {
   Future<void> loadModel() async {
     try {
       _interpreter = await Interpreter.fromAsset('assets/skin_cancer_v7_bigdata_TESTED.tflite');
-      print('✅ V7 Grandmaster Yapay Zeka Motoru Hazır!');
+      debugPrint('✅ V7 Grandmaster Yapay Zeka Motoru Hazır!');
     } catch (e) {
-      print('❌ Model Yükleme Hatası: $e');
+      debugPrint('❌ Model Yükleme Hatası: $e');
     }
   }
 
@@ -69,7 +70,7 @@ class AiService {
         'risk_score': riskScore,
       };
     } catch (e) {
-      print('❌ Analiz Motoru Çöktü: $e');
+      debugPrint('❌ Analiz Motoru Çöktü: $e');
       return {'label': 'Analiz Başarısız', 'risk_score': 0.0};
     }
   }

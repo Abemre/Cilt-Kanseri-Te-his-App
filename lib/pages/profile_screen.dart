@@ -337,7 +337,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           Switch.adaptive(
             value: value,
             onChanged: onChanged,
-            activeColor: AppColors.primary,
+            activeTrackColor: AppColors.primary,
           ),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 
@@ -45,7 +46,7 @@ class WeatherService {
         }
       }
     } catch (e) {
-      print('UV API Error: $e');
+      debugPrint('UV API Error: $e');
     }
     return null;
   }
